@@ -1,0 +1,24 @@
+{% extends 'akkaunttar/base.html' %}
+
+{% block head %}
+{% block title %}<title>Ui</title>{% endblock %}
+{%endblock%}
+
+{% block header %}
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/">Bilisu</a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <a class="navbar-brand" href="{% url 'akkaunttar:logout'%}">shigu</a>
+  </nav>
+{% endblock %}
+
+{% block body %}
+{% if user.is_authenticated %}
+<div class="jumbotron text-center">
+  <h1>"{{userName}}" qosh keldinizder!</h1>
+</div>
+{% endif%}
+{% endblock %}

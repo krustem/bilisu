@@ -1,0 +1,15 @@
+{% extends 'bilisu/base.html'%}
+{% block title %}<title>Suraq qoiu</title>{% endblock %}
+{% block body %}
+  {% if user.is_authenticated %}
+    {% block content %}
+    <div class="jumbotron suraq_formasi text-center">
+        <form action="/akkaunttar/ui/" method="post">
+            <label for="sizdin_suraginiz">Sizdin suraginiz: </label>
+            <input id="sizdin_suraginiz" type="text" name="sizdin_suraginiz" value="{{ current_name }}">
+            <input type="submit" value="OK">
+        </form>
+    </div>
+    {% endblock %}
+  {% endif%}
+{% endblock %}
